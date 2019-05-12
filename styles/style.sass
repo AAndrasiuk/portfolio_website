@@ -1,0 +1,406 @@
+$mainColor: #a2a2a2
+$accentColor: #e0dddd
+$darkAccentColor: #8b8a8a
+$whiteMilk: #e0dede
+
+$aboutBgColor: #eeeeee
+$projectsBgColor: #f3f1f1
+$footerBgColor: #1a1a1a
+
+$verticalPadding: 50px
+	
+*
+	margin: 0
+	padding: 0
+	box-sizing: border-box	
+
+html
+  scroll-behavior: smooth
+
+body
+	font-family: 'Roboto', sans-serif
+	font-weight: 300
+	font-size: 16px
+
+a
+	text-decoration: none
+	transition: all .2s
+
+h1
+	font-size: 1.5rem
+	font-weight: 300
+	color: $mainColor
+
+h2
+	font-size: 2rem
+	color: $accentColor
+	font-weight: 400
+
+	span
+		font-size: 1.3rem
+		font-weight: 300
+		color: $mainColor
+
+h3
+	font-size: 1.2rem
+	color: $mainColor
+	font-weight: 300
+	
+p
+	font-size: 1rem
+	color: $mainColor
+
+.icon-social
+	&:before
+		transition: all .2s
+		content: "\e902"
+		font-size: 1.6rem
+		color: $mainColor
+	&:hover
+		cursor: pointer
+		&:before
+			color: $accentColor
+
+header, .about, .projects, footer
+	padding: $verticalPadding
+
+
+// HEADER SECTION
+
+header
+	height: 100vh	
+	width: 100%
+	background-size: cover
+	background-repeat: no-repeat
+	background-position: center
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+	
+	.menu 
+		align-self: flex-end
+		display: flex
+		justify-content: flex-end
+		align-items: center
+		list-style: none
+		color: $mainColor
+
+		a
+			color: $mainColor
+			margin-left: 25px
+
+			&:hover
+				cursor: pointer
+				color: $accentColor
+
+	.heading
+		align-self: flex-start
+		display: flex
+		flex-direction: column
+		justify-content: flex-start
+		align-items: flex-start
+
+		@media (min-width: 991px)
+			margin-left: 50px
+
+		h3
+			margin-bottom: 10px
+		h2
+			// margin-bottom: 5px
+
+			@media (max-width: 575px)
+				font-size: 1.6rem
+
+	.social
+		align-self: flex-start
+		list-style: none
+		display: flex
+		justify-content: flex-start
+		align-items: center
+
+		.icon-social
+			margin-right: 25px
+
+		.icon-linkedin
+			&:before
+  				content: "\e902"
+
+		.icon-facebook
+			&:before
+  				content: "\e901"
+
+		.icon-github
+			&:before 
+				content: "\e900"
+		
+// ABOUT SECTION
+
+.about
+	background-color: $aboutBgColor
+	
+	h1
+		margin-bottom: $verticalPadding
+
+	.about-categories
+		padding: $verticalPadding
+		display: grid
+		grid-gap: $verticalPadding
+
+		@media (max-width: 767px)
+			grid-template-columns: 1fr
+			padding: 0
+			
+		@media (min-width: 768px)
+			grid-template-columns: 1fr 1fr
+
+		@media (min-width: 992px)  
+			grid-template-columns: 1fr 1fr 1fr
+
+
+		.title
+			display: block
+			height: 40px
+			margin-bottom: 5px
+			background-image: linear-gradient(to right, #b0b0b0, #b5b5b5, #bababa, #c0c0c0, #c5c5c5)
+			// background-image: linear-gradient(to right, #b0b0b0, #bfbfbf, #cfcfcf, #dedede, #eeeeee)
+			font-size: 1.3rem
+			font-weight: bold
+			color: #fff
+			display: flex
+			justify-content: center
+			align-items: center
+
+		h2
+			color: $darkAccentColor
+			font-size: 1.3rem
+			margin-top: 10px
+			margin-bottom: 5px
+			font-weight: bold
+		h3
+			position: relative
+			z-index: 1
+			&:before
+				content: ''
+				position: absolute
+				z-index: -1
+				background-color: #b0b0b0
+				width: 100px
+				height: 40px
+				top: 0
+				left: 0
+
+		p
+			color: $mainColor
+			line-height: 1.4
+
+			span
+				color: darken($accentColor, 20%)
+				font-weight: bold
+			a
+				color: $mainColor
+				border-bottom: 1px solid
+
+				&:hover
+					color: lighten($mainColor, 20%)
+
+
+// PROJECTS SECTION
+
+.projects
+	background-color: $projectsBgColor
+
+	h1
+		margin-bottom: $verticalPadding
+				
+	.project
+		padding: $verticalPadding
+		display: flex
+		justify-content: center
+
+		@media (max-width: 991px)
+			flex-direction: column
+			
+
+		@media (min-width: 992px)  
+			flex-direction: row	
+			margin-bottom: $verticalPadding * 2
+
+		.mockup
+			width: 40vw
+			z-index: 0
+			position: relative
+
+			@media (max-width: 991px)  
+				align-self: center
+				width: 80vw
+
+			@media (min-width: 992px)  
+				width: 50vw
+
+			img
+				max-width: 100%
+			span
+				z-index: -1
+				padding: 1rem 1.5rem
+				background-image: linear-gradient(to right, #b0b0b0, #b5b5b5, #bababa, #c0c0c0, #c5c5c5)
+				font-size: 2rem
+				font-weight: bold
+				color: #fff
+
+				@media (max-width: 575px)
+					padding: .8rem 1.5rem
+					font-size: 1.6rem
+
+
+		.description
+			margin: 40px 20px
+			// padding-left: 20px
+			// border-left: 1px solid rgba(0,0,0,.1)
+		
+			// &:nth-child(1)
+			// 	border-left: none
+			// 	border-right: 1px solid rgba(0,0,0,.1)
+			// 	text-align: right
+			// 	padding-right: 20px
+
+			h2
+				font-weight: bold
+				font-size: 2.2rem
+				color: #c5c5c5
+
+				@media (max-width: 575px)
+					font-size: 1.6rem
+
+			.desc
+				margin-top: 20px
+				font-size: 16px
+			.stack
+				margin-top: 10px
+				& span
+					color: #6e6c6c
+					font-weight: normal
+			.techno
+				display: block
+				margin-top: 10px
+				margin-bottom: 10px
+				color: $mainColor
+			
+			@media (max-width: 991px)
+				align-self: center
+				padding-top: 20px
+				border-top: 1px solid rgba(0,0,0,.1)
+				
+				h2 
+					text-align: center
+
+			@media (min-width: 992px)  
+				align-self: center
+				padding-left: 20px
+				border: none
+				border-left: 1px solid rgba(0,0,0,.1)
+				
+		 .technologies 
+				display: grid
+				grid-template-columns: 1fr 1fr
+				grid-template-rows: 1fr 1fr
+				grid-gap: 10px
+				// max-width: 380px
+			
+				li
+					list-style:none
+					min-width: 130px
+					padding: .5rem .5rem
+					border: 1px solid rgba(0, 0, 0, .2)
+					border-radius: 5px
+					font-weight: normal
+					
+					color: $darkAccentColor
+					display: flex
+					justify-content: center
+					align-items: center
+					
+			.links
+				margin-top: 20px
+				i
+					color: $mainColor
+					margin-right: 10px
+
+					.icon-worldwide
+						&:before
+							content: "\e903"	
+					.icon-github
+						&:before 
+							content: "\e900"
+					&:hover
+						&:before
+							color: $darkAccentColor
+
+				@media (max-width: 991px)
+					display: flex
+					justify-content: center
+
+
+// FOOTER SECTION
+
+footer
+	background-color: $footerBgColor
+	display: flex
+	flex-direction: column
+	justify-content: center
+
+	.social-contact-wrapper
+		display: flex
+		align-items: center
+		justify-content: center
+		flex-direction: row
+		margin-bottom: $verticalPadding
+
+		@media (max-width: 767px)
+			flex-direction: column
+
+	.social
+		margin-right: $verticalPadding
+		display: flex
+		justify-content: space-between
+		align-items: center
+
+		div
+			margin: 0 10px
+
+		@media (max-width: 767px)
+			margin-right: 0
+			margin-bottom: $verticalPadding
+
+	.contact-info
+		justify-self: start
+		display: flex
+		flex-direction: column
+			
+	.social, .contact-info
+		a
+			color: $whiteMilk
+			margin-bottom: 15px
+			i
+				display: flex
+				align-items: center
+				transition: all .2s
+
+				&:before
+					color: $whiteMilk
+					margin-right: 10px
+			&:hover
+				i
+					color: $mainColor		
+					&:before
+						color: $mainColor
+
+	.copyright
+		display: flex
+		flex-direction: column
+		align-items: center
+		p
+			color: $whiteMilk
+			text-align: center
+		p:first-child
+			margin-bottom: 10px
+
