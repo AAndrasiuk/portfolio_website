@@ -1,6 +1,6 @@
 ﻿### Portfolio website. ###
 
-You can try this portfolio by following [link](https://aandrasiuk.github.io/aandrasiuk_portfolio)
+You can try this portfolio by following [link](https://aandrasiuk.github.io/portfolio_website/)
 
 ----
 
