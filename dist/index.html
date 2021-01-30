@@ -293,9 +293,14 @@
             </div>
          </div>
          <div class="copyright">
-            <p>&copy; 2019</p>
+            <p id="current-year"></p>
             <p>Designed by Aliaksandr Andrasiuk</p>
          </div>
+
+         <script>
+            const yearContainer = document.getElementById('current-year');
+            yearContainer.innerText = `\u00A9 ${new Date().getFullYear()}`;
+         </script>
       </footer>
    </body>
 </html>
