@@ -236,6 +236,19 @@ header .social .icon-github:before {
           align-items: center;
 }
 
+.about .about-categories .list {
+  color: #8b8a8a;
+  margin: 0.5rem 0 0 1.5rem;
+}
+
+.about .about-categories .list li {
+  margin-top: 0.5rem;
+}
+
+.about .about-categories .about-work {
+  margin-bottom: 2rem;
+}
+
 .about .about-categories h2 {
   color: #8b8a8a;
   font-size: 1.3rem;
